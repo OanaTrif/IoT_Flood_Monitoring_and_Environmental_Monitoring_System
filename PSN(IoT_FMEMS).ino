@@ -82,7 +82,6 @@ void loop() {
     nivelApa = analogRead(WATER_PIN); 
 
     if (!isnan(temperaturaCurenta) && !isnan(umiditate)) {
-      // Acest format (DATA \t UMIDITATE \t TEMPERATURA \t NIVEL_APA) este vital pentru Python
       Serial.print("DATA\t");
       Serial.print(umiditate);
       Serial.print("\t");
