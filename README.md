@@ -1,0 +1,2 @@
+# IoT_Flood_Monitoring_and_Environmental_Monitoring_System
+Engineered a remote IoT environmental monitor with Arduino, Flask, and a custom web dashboard. Integrated DHT11 and water sensors to track real-time conditions and trigger automated flood alerts. Built remote LED/buzzer controls, EEPROM message storage, event logging, and secure ngrok internet access, bridging hardware-software communication.
