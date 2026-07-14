@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 
 app = Flask(__name__)
 
-PORT_SERIAL = 'COM3'  
+PORT_SERIAL = 'YOUR_SERIAL_PORT_HERE' 
 BAUD_RATE = 9600
 
 date_curente = {"temperatura": "--", "umiditate": "--", "nivel_apa": "0"}
@@ -17,9 +17,9 @@ istoric_inundatii = []
 alerta_trimisa = False
 
 
-EMAIL_EXPEDITOR = "oanatrif23@gmail.com"
-EMAIL_PAROLA = "uilk eztm zcsu pokx"  
-EMAIL_DESTINATAR = "oanatrif23@gmail.com"
+EMAIL_EXPEDITOR = "your_sender_email@gmail.com"
+EMAIL_PAROLA = "your_16_char_google_app_password"  
+EMAIL_DESTINATAR = "your_destination_email@gmail.com"
 
 try:
     conexiune_seriala = serial.Serial(PORT_SERIAL, BAUD_RATE, timeout=1)
@@ -40,7 +40,7 @@ def trimite_email_alerta(data_ora):
         server.sendmail(EMAIL_EXPEDITOR, [EMAIL_DESTINATAR], msg.as_string())
         server.quit()
     except Exception:
-        print("E-mailul nu s-a trimis (necesita configurare cont Google), dar logica functioneaza!")
+        print("E-mailul nu s-a trimis!")
 
 def citeste_date_arduino():
     global date_curente, alerta_trimisa, istoric_inundatii
